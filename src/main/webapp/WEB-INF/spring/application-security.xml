@@ -22,6 +22,9 @@
 		<logout logout-success-url="/"
 				logout-url="/logout"/>
 
+		<headers>
+			<frame-options policy="SAMEORIGIN" />
+		</headers>
 	</http>
 
 

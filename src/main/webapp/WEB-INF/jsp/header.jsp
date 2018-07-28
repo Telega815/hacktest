@@ -15,13 +15,27 @@
 <body>
 <body>
 <header>
-    <a class="logo" href="#">Logo</a>
+    <%--<a class="logo" href="#">Logo</a>--%>
+        <img id="logoImgOr" src="${pageContext.request.contextPath}/resources/images/muzikalnie.png" alt="">
     <div class="links">
         <a href="">Музыка</a>
-        <a href="">Видео</a>
-        <a href="">О нас</a>
+        <a href="">Клипы</a>
+        <%--<a href="">О нас</a>--%>
     </div>
-    <button id="logIn">Войти</button>
+    <div class="userSettings">
+        <div class="coinBlock">
+            <img class="coinImg" src="${pageContext.request.contextPath}/resources/images/coin.png">
+            <span id="conValue">1000</span>
+        </div>
+        <div class="user">
+            <button id="logIn">Войти</button>
+            <span id="userName">Gur001</span>
+        </div>
+    </div>
+    <div class="userWindow">
+        <span id="bonuses">Бонусы</span>
+        <span id="logOut">Выйти</span>
+    </div>
 </header>
 <main></main>
 </body>

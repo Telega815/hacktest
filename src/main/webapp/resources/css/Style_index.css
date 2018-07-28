@@ -6,7 +6,6 @@
 	font-family: arial;
 
 }
-
 header {
 	position: fixed;
 	width: 100%;
@@ -36,21 +35,30 @@ html {
     margin: 0 150px 0 0;
 }
 
-.imgPosition{
+.imgPosition {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	/*background-color: green;*/
 }
 
-.imgPos{
+.imgPos {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
 	text-align: center;
 	margin: 15px;
 	cursor: pointer;
+}
+.imgPos:hover:after {
+	content: "";
+	justify-content: flex-start;
+	position: absolute;
+	width: 130px;
+	height: 130px;
+	background-color: black;
+	opacity: 0.5;
 }
 
 .imgPos img {
@@ -108,9 +116,12 @@ html {
     align-items: center;
     border: 6px solid #c4feff;
     cursor: default;
+	color: white;
+	font-size: 23px;
+	text-align: center;
 }
 
-.blockGame button{
+#blockGameButton {
 	width: 200px;
     height: 50px;
     background: #07ff9f;
@@ -118,6 +129,66 @@ html {
     font-family: arial;
     font-size: 20px;
     cursor: pointer;
+}
+@-webkit-keyframes blockGameButton {
+  15% {
+    -webkit-transform: translateX(9px);
+    transform: translateX(9px);
+  }
+  30% {
+    -webkit-transform: translateX(-9px);
+    transform: translateX(-9px);
+  }
+  40% {
+    -webkit-transform: translateX(6px);
+    transform: translateX(6px);
+  }
+  50% {
+    -webkit-transform: translateX(-6px);
+    transform: translateX(-6px);
+  }
+  65% {
+    -webkit-transform: translateX(3px);
+    transform: translateX(3px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+ 
+@keyframes blockGameButton {
+  15% {
+    -webkit-transform: translateX(9px);
+    transform: translateX(9px);
+  }
+  30% {
+    -webkit-transform: translateX(-9px);
+    transform: translateX(-9px);
+  }
+  40% {
+    -webkit-transform: translateX(6px);
+    transform: translateX(6px);
+  }
+  50% {
+    -webkit-transform: translateX(-6px);
+    transform: translateX(-6px);
+  }
+  65% {
+    -webkit-transform: translateX(3px);
+    transform: translateX(3px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+ 
+#blockGameButton:hover {
+  -webkit-animation: blockGameButton 0.6s ease;
+  animation: blockGameButton 0.6s ease;
+   -webkit-animation-iteration-count: 1;
+   animation-iteration-count: 1;
 }
 
 .hotArtist{
@@ -134,7 +205,6 @@ html {
 	flex-direction: column;
 	margin: 5px;
 }
-
 .hotArtistImgPosition{
 	display: flex;
     /*flex-direction: row;*/
@@ -181,17 +251,21 @@ html {
 
 /*Окно ввода данных пользователя*/
 #blackpanel {
-	display: none;
-	justify-content: center;
-	align-items: center;
-	position: absolute;
+	width: 100%;
+	height: 100%;
+	position: fixed;
 	top: 0;
 	left: 0;
-	bottom: 0;
-	right: 0;
+	display: none;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+	overflow: auto;
 	background: rgba(0, 0, 0, 0.8);
+	z-index: 100;
 }
 #winLogIn {
+	display: none;
 	position: absolute;
 	width: 350px;
 	height: 450px;
@@ -206,15 +280,30 @@ html {
 	background-color: #F3F3F3;
 	border-radius: 5px;
 }
+.closeBlock {
+	display: flex;
+	justify-content: flex-end;
+	/*background-color: green;*/
+	margin: auto;
+}
+
+.closeBlock1 {
+	display: flex;
+	justify-content: flex-end;
+	/*background-color: green;*/
+	margin: -40;
+}
+
 .close {
 	width: 40px;
 	height: 40px;
-	margin-left: 310px;
 	background-image: url("../images/close.png");
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
+	background-color: white; 
 	border-radius: 4px;
+	cursor: pointer;
 }
 .close:hover {
 	background-color: grey;
@@ -276,11 +365,68 @@ html {
 #regButton:hover {
 	color: #55C2E1;;
 }
-.prew {
+#shop {
+	display: none;
+	width: 500px;
+	height: 500px;
+	position: absolute;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: right;
+	background-color: #F3F3F3;
+	border-radius: 5px;
+}
+.bonusValueBlock {
+	width: 100%;
+	height: 152px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#bonusValue {
 	display: inline-block;
 	vertical-align: top;
-	margin: 10px;
-	width: 100px;
-	height: 100px;
-	background-color: darkgrey; 
+	line-height: 150px;
+	text-align: center;
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	border: 5px solid #3DB39E;
+	font-size: 20px;
+}
+#buy {
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+}
+.shopTableBlock {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+.shopTable {
+	margin-top: 20px;
+	border-collapse: collapse;
+}
+.shopTable td {
+	border: 1px solid grey;
+}
+.shopTable th {
+	padding: 10px 20px;
+	border: 2px solid darkgrey;
+	font-size: 16px;
+}
+#game {
+	display: none;
+	position: absolute;
+	flex-direction: column;
+	width: 1280px;
+	height: 720px;
+	border-radius: 5px;
+	/*background-color: red;*/
+}
+
+#game iframe{
+	width: 1280px;
+	height: 720px;
 }

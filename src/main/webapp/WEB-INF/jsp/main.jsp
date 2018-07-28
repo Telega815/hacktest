@@ -199,9 +199,9 @@
 
                 <div class="mainRight">
                     <div class="blockGame">
-                        <span>Проийди игру и иди на уй</span>
-                        <button>Начать</button>
-                    </div>
+                        <span>Проийди игру и получи монеты</span>
+                        <button id="blockGameButton">Начать</button>
+                     </div>
                     <div class="hotArtist">
                         <!-- <div class="hotArtistDivBlockMargin"> -->
                         <div class="hotArtistSdf">
@@ -243,7 +243,9 @@
             <div id="blackpanel">
                 <c:url value="/service/loginProcessing" var="loginUrl"/>
                 <form:form id="winLogIn" method="post" action="${loginUrl}" modelAttribute="user">
+                    <div class="closeBlock">
                     <div class="close"></div>
+                    </div>
                     <div class="forms">
                         <legend>Авторизация</legend>
                         <span class="legendSpan">Введите ваши регистрационные данные для входа в ваш личный кабинет</span>
@@ -268,7 +270,9 @@
                 </form:form>
 
                 <form:form id="winRegistration" method="post" modelAttribute="user">
-                    <div class="close"></div>
+                    <div class="closeBlock">
+                        <div class="close"></div>
+                    </div>
                     <div class="forms">
                         <legend>Регистрация</legend>
                         <div class="form-group">
@@ -291,6 +295,54 @@
                         <button type="submit" class="btn btn-primary">Зарегестрироваться</button>
                     </div>
                 </form:form>
+                <div id="shop">
+                    <div class="closeBlock">
+                        <div class="close"></div>
+                    </div>
+                    <div class="bonusValueBlock">
+                        <div>
+                            <span id="bonusValue">1200</span>
+                            <img id="buy" src="${pageContext.request.contextPath}/resources/images/buy.png">
+                        </div>
+                    </div>
+                    <div class="shopTableBlock">
+                        <table class=shopTable>
+                            <tr>
+                                <th>Дата</th>
+                                <th>Имя</th>
+                                <th>Кол-во монет</th>
+                            </tr>
+                            <tr>
+                                <th>15.05.2018</th>
+                                <th>Тимур</th>
+                                <th>69</th>
+                            </tr>
+                            <tr>
+                                <th>25.05.2018</th>
+                                <th>Димон</th>
+                                <th>33</th>
+                            </tr>
+                            <tr>
+                                <th>17.06.2018</th>
+                                <th>Вася</th>
+                                <th>1</th>
+                            </tr>
+                            <tr>
+                                <th>21.06.2018</th>
+                                <th>Лариска</th>
+                                <th>99</th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div id="game">
+                    <div class="closeBlock1">
+                        <div class="close"></div>
+                    </div>
+                    <iframe src="${pageContext.request.contextPath}/resources/game/index.html" frameborder="0"></iframe>
+
+                </div>
+
             </div>
         </main>
 

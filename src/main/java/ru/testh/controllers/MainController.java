@@ -75,4 +75,20 @@ public class MainController {
         return modelAndView;
     }
 
+    @GetMapping(value = "/game")
+    public ModelAndView lsdfdsn(@RequestParam(value = "error", required = false) String error,
+                              @SessionAttribute(name = "user", required = false) User user){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("game");
+        return modelAndView;
+    }
+
+    @PostMapping(value = "/victory")
+    public void victory(@RequestBody String str,
+                        @SessionAttribute (value = "user", required = false) User user){
+        str += "";
+        if (user != null && !userService.getAuthenticatedUserName().toLowerCase().equals("anonymoususer")){
+            user.setEmailConfirmed(true);
+        }
+    }
 }
