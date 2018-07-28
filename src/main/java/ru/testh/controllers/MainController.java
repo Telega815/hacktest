@@ -23,7 +23,8 @@ public class MainController {
     }
 
     @GetMapping(value = "/")
-    public ModelAndView mainPage(@SessionAttribute(name = "user", required = false) User user){
+    public ModelAndView mainPage(@RequestParam(value = "error", required = false) String error,
+                                 @SessionAttribute(name = "user", required = false) User user){
         ModelAndView modelAndView = new ModelAndView();
         boolean loggedIn = false;
         if (user == null){
@@ -32,10 +33,19 @@ public class MainController {
         if(!userService.getAuthenticatedUserName().toLowerCase().equals("anonymoususer")){
             loggedIn = true;
         }
+        if (error != null) {
+            modelAndView.addObject("error", "Invalid username or password!");
+        }
         modelAndView.setViewName("main");
         modelAndView.addObject("user", user);
         modelAndView.addObject("loggedIn", loggedIn);
         return modelAndView;
+    }
+
+    @PostMapping(value = "/")
+    public String createUser2(@ModelAttribute("user") User user){
+        userService.createUser(user);
+            return "redirect:/";
     }
 
     @GetMapping(value = "/registration")

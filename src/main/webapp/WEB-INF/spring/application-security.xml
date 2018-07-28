@@ -13,9 +13,9 @@
 	<http use-expressions="true">
 		<form-login
 				login-processing-url="/service/loginProcessing"
-				login-page='/login'
+				login-page='/'
 				default-target-url="/"
-			authentication-failure-url="/login?error=true"
+			authentication-failure-url="/?error=true"
 			username-parameter="email"
 			password-parameter="pwd"/>
 		<csrf disabled="true"/>
