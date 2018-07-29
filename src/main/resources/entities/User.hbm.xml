@@ -12,5 +12,6 @@
         <property name="pwd" column="pwd"/>
         <property name="emailConfirmed" column="emailConfirmed"/>
         <property name="confirmKey" column="confirmKey"/>
+        <property name="coins" column="coins"/>
     </class>
 </hibernate-mapping>

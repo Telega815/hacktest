@@ -6,6 +6,7 @@ public class User {
     private String pwd;
     private boolean emailConfirmed;
     private String confirmKey;
+    private int coins;
 
     public long getId() {
         return id;
@@ -67,5 +68,13 @@ public class User {
 
     public void setConfirmKey(String confirmKey) {
         this.confirmKey = confirmKey;
+    }
+
+    public int getCoins() {
+        return coins;
+    }
+
+    public void setCoins(int coins) {
+        this.coins = coins;
     }
 }

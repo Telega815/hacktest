@@ -17,6 +17,8 @@
     <mapping resource="entities/GroupAuthorities.hbm.xml"/>
     <mapping resource="entities/GroupMembers.hbm.xml"/>
     <mapping resource="entities/Groups.hbm.xml"/>
+    <mapping resource="entities/Promocodes.hbm.xml"/>
+    <mapping resource="entities/Transactions.hbm.xml"/>
 
 
 

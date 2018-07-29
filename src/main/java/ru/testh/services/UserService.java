@@ -26,9 +26,9 @@ public class UserService {
         user.setPwd(passwordEncoder.encode(user.getPwd()));
         user.setEmailConfirmed(false);
         user.setConfirmKey(RandomStringService.randomAlphaNumeric(10));
+        user.setCoins(200);
         usersDAO.saveUser(user);
         groupMembersDAO.saveUser(groupsDAO.getGroup("users").getId(), user.getEmail());
-        emailService.sendRegMsg(user.getEmail(), user.getConfirmKey());
         return true;
     }
 

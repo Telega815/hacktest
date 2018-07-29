@@ -15,8 +15,8 @@
     </database>
     <schema id="5" parent="3" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2018-07-28.18:05:39.240</IntrospectionTimestamp>
-      <IntrospectionStateNumber>3215</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2018-07-29.15:12:43.317</IntrospectionTimestamp>
+      <IntrospectionStateNumber>3238</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -35,47 +35,67 @@
     <schema id="10" parent="3" name="information_schema">
       <ObjectId>12113</ObjectId>
     </schema>
-    <sequence id="11" parent="5" name="group_authorities_id_seq">
+    <sequence id="11" parent="5" name="transactions_id_seq">
+      <ObjectId>65913</ObjectId>
+      <StateNumber>3238</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <sequence id="12" parent="5" name="group_authorities_id_seq">
       <ObjectId>65875</ObjectId>
       <StateNumber>3206</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
       <BelongsToColumn>1</BelongsToColumn>
     </sequence>
-    <sequence id="12" parent="5" name="group_members_id_seq">
+    <sequence id="13" parent="5" name="group_members_id_seq">
       <ObjectId>65862</ObjectId>
       <StateNumber>3205</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
       <BelongsToColumn>1</BelongsToColumn>
     </sequence>
-    <sequence id="13" parent="5" name="groups_id_seq">
+    <sequence id="14" parent="5" name="groups_id_seq">
       <ObjectId>65853</ObjectId>
       <StateNumber>3202</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
       <BelongsToColumn>1</BelongsToColumn>
     </sequence>
-    <sequence id="14" parent="5" name="users_id_seq">
+    <sequence id="15" parent="5" name="promocodes_id_seq">
+      <ObjectId>65888</ObjectId>
+      <StateNumber>3218</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <sequence id="16" parent="5" name="users_id_seq">
       <ObjectId>65841</ObjectId>
       <StateNumber>3194</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
       <BelongsToColumn>1</BelongsToColumn>
     </sequence>
-    <table id="15" parent="5" name="group_authorities">
+    <table id="17" parent="5" name="group_authorities">
       <ObjectId>65877</ObjectId>
       <StateNumber>3206</StateNumber>
     </table>
-    <table id="16" parent="5" name="group_members">
+    <table id="18" parent="5" name="group_members">
       <ObjectId>65864</ObjectId>
       <StateNumber>3205</StateNumber>
     </table>
-    <table id="17" parent="5" name="groups">
+    <table id="19" parent="5" name="groups">
       <ObjectId>65855</ObjectId>
       <StateNumber>3206</StateNumber>
     </table>
-    <table id="18" parent="5" name="users">
-      <ObjectId>65838</ObjectId>
-      <StateNumber>3200</StateNumber>
+    <table id="20" parent="5" name="promocodes">
+      <ObjectId>65890</ObjectId>
+      <StateNumber>3218</StateNumber>
     </table>
-    <column id="19" parent="15" name="id">
+    <table id="21" parent="5" name="transactions">
+      <ObjectId>65915</ObjectId>
+      <StateNumber>3238</StateNumber>
+    </table>
+    <table id="22" parent="5" name="users">
+      <ObjectId>65838</ObjectId>
+      <StateNumber>3233</StateNumber>
+    </table>
+    <column id="23" parent="17" name="id">
       <Position>1</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
@@ -83,28 +103,28 @@
       <SequenceName>group_authorities_id_seq</SequenceName>
       <DefaultExpression>nextval(&apos;group_authorities_id_seq&apos;::regclass)</DefaultExpression>
     </column>
-    <column id="20" parent="15" name="authority">
+    <column id="24" parent="17" name="authority">
       <Position>2</Position>
       <DataType>varchar(50)|0</DataType>
       <StateNumber>3206</StateNumber>
     </column>
-    <column id="21" parent="15" name="group_id">
+    <column id="25" parent="17" name="group_id">
       <Position>3</Position>
       <DataType>bigint|0</DataType>
       <StateNumber>3206</StateNumber>
     </column>
-    <index id="22" parent="15" name="group_authorities_pkey">
+    <index id="26" parent="17" name="group_authorities_pkey">
       <ObjectId>65881</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="23" parent="15" name="group_authorities_pkey">
+    <key id="27" parent="17" name="group_authorities_pkey">
       <ObjectId>65882</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>group_authorities_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="24" parent="15" name="group_authorities_groups_id_fk">
+    <foreign-key id="28" parent="17" name="group_authorities_groups_id_fk">
       <ObjectId>65883</ObjectId>
       <ColNames>group_id</ColNames>
       <RefTableId>65855</RefTableId>
@@ -113,7 +133,7 @@
       <RefKeyName>groups_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="25" parent="16" name="id">
+    <column id="29" parent="18" name="id">
       <Position>1</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
@@ -121,28 +141,28 @@
       <SequenceName>group_members_id_seq</SequenceName>
       <DefaultExpression>nextval(&apos;group_members_id_seq&apos;::regclass)</DefaultExpression>
     </column>
-    <column id="26" parent="16" name="username">
+    <column id="30" parent="18" name="username">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <StateNumber>3205</StateNumber>
     </column>
-    <column id="27" parent="16" name="group_id">
+    <column id="31" parent="18" name="group_id">
       <Position>3</Position>
       <DataType>bigint|0</DataType>
       <StateNumber>3205</StateNumber>
     </column>
-    <index id="28" parent="16" name="group_members_pkey">
+    <index id="32" parent="18" name="group_members_pkey">
       <ObjectId>65868</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="29" parent="16" name="group_members_pkey">
+    <key id="33" parent="18" name="group_members_pkey">
       <ObjectId>65869</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>group_members_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="30" parent="16" name="group_members_groups_id_fk">
+    <foreign-key id="34" parent="18" name="group_members_groups_id_fk">
       <ObjectId>65870</ObjectId>
       <ColNames>group_id</ColNames>
       <RefTableId>65855</RefTableId>
@@ -151,7 +171,7 @@
       <RefKeyName>groups_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="31" parent="17" name="id">
+    <column id="35" parent="19" name="id">
       <Position>1</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
@@ -159,28 +179,97 @@
       <SequenceName>groups_id_seq</SequenceName>
       <DefaultExpression>nextval(&apos;groups_id_seq&apos;::regclass)</DefaultExpression>
     </column>
-    <column id="32" parent="17" name="group_name">
+    <column id="36" parent="19" name="group_name">
       <Position>2</Position>
       <DataType>varchar(50)|0</DataType>
       <StateNumber>3203</StateNumber>
     </column>
-    <index id="33" parent="17" name="groups_pkey">
+    <index id="37" parent="19" name="groups_pkey">
       <ObjectId>65859</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="34" parent="17" name="groups_group_name_uindex">
+    <index id="38" parent="19" name="groups_group_name_uindex">
       <ObjectId>65861</ObjectId>
       <ColNames>group_name</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="35" parent="17" name="groups_pkey">
+    <key id="39" parent="19" name="groups_pkey">
       <ObjectId>65860</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>groups_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="36" parent="18" name="id">
+    <column id="40" parent="20" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>3218</StateNumber>
+      <SequenceName>promocodes_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;promocodes_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="41" parent="20" name="promocode">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>3218</StateNumber>
+    </column>
+    <column id="42" parent="20" name="expired">
+      <Position>3</Position>
+      <DataType>boolean|0</DataType>
+      <StateNumber>3218</StateNumber>
+      <DefaultExpression>false</DefaultExpression>
+    </column>
+    <index id="43" parent="20" name="promocodes_pkey">
+      <ObjectId>65895</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="44" parent="20" name="promocodes_promocode_uindex">
+      <ObjectId>65897</ObjectId>
+      <ColNames>promocode</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="45" parent="20" name="promocodes_pkey">
+      <ObjectId>65896</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>promocodes_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="46" parent="21" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>3238</StateNumber>
+      <SequenceName>transactions_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;transactions_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="47" parent="21" name="date">
+      <Position>2</Position>
+      <DataType>time|0</DataType>
+      <StateNumber>3238</StateNumber>
+    </column>
+    <column id="48" parent="21" name="price">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>3238</StateNumber>
+    </column>
+    <column id="49" parent="21" name="addition">
+      <Position>4</Position>
+      <DataType>boolean|0</DataType>
+      <StateNumber>3238</StateNumber>
+    </column>
+    <index id="50" parent="21" name="transactions_pkey">
+      <ObjectId>65919</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="51" parent="21" name="transactions_pkey">
+      <ObjectId>65920</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>transactions_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="52" parent="22" name="id">
       <Position>1</Position>
       <DataType>bigint|0</DataType>
       <NotNull>1</NotNull>
@@ -188,37 +277,43 @@
       <SequenceName>users_id_seq</SequenceName>
       <DefaultExpression>nextval(&apos;users_id_seq&apos;::regclass)</DefaultExpression>
     </column>
-    <column id="37" parent="18" name="pwd">
+    <column id="53" parent="22" name="pwd">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <StateNumber>3195</StateNumber>
     </column>
-    <column id="38" parent="18" name="email">
+    <column id="54" parent="22" name="email">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
       <StateNumber>3197</StateNumber>
     </column>
-    <column id="39" parent="18" name="emailconfirmed">
+    <column id="55" parent="22" name="emailconfirmed">
       <Position>5</Position>
       <DataType>boolean|0</DataType>
       <StateNumber>3199</StateNumber>
     </column>
-    <column id="40" parent="18" name="confirmkey">
+    <column id="56" parent="22" name="confirmkey">
       <Position>6</Position>
       <DataType>varchar(255)|0</DataType>
       <StateNumber>3200</StateNumber>
     </column>
-    <index id="41" parent="18" name="users_id_pk">
+    <column id="57" parent="22" name="coins">
+      <Position>7</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>3234</StateNumber>
+      <DefaultExpression>200</DefaultExpression>
+    </column>
+    <index id="58" parent="22" name="users_id_pk">
       <ObjectId>65851</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="42" parent="18" name="users_email_uindex">
+    <index id="59" parent="22" name="users_email_uindex">
       <ObjectId>65850</ObjectId>
       <ColNames>email</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="43" parent="18" name="users_id_pk">
+    <key id="60" parent="22" name="users_id_pk">
       <ObjectId>65852</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>users_id_pk</UnderlyingIndexName>
